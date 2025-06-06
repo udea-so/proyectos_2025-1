@@ -12,7 +12,6 @@ En el siguiente repositorio se hara una recopilación de todos los proyectos fin
 |2|Desarrollo de un Monitor de Sistema en Tiempo Real con Notificaciones de Umbrales de Recursos|Claudia Lucía Serna Gómez|[GR-02](GR-02/)|
 |||Paula Andrea Guarin Guarin||
 |||Duvan Ferney Ruiz Ocampo||
-Compresor de Archivos Paralelo
 |3|Compresor de Archivos Paralelo|Juan Sebastian Loaiza Mazo|[GR-03](GR-03/)|
 |||Sulay Gisella Martinez Barreto||
 |4|Buffer Overflow|Huber Steven Arroyave Rojas|[GR-04](GR-04/)|
