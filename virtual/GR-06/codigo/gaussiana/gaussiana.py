@@ -1,6 +1,8 @@
 import numpy as np
 import time
 import csv
+import sys
+import os
 
 
 def gauss_jordan_inverse(A):
@@ -33,15 +35,40 @@ def leer_matriz_desde_csv(nombre_archivo):
     return np.array(matriz)
 
 
-# Uso del programa
-nombre_archivo = '../../matrices/matriz_5000x5000_invertible.csv'
-A = leer_matriz_desde_csv(nombre_archivo)
-# print("Matriz original:")
-# print(A)
+# --- Uso desde línea de comandos ---
+if len(sys.argv) != 2:
+    print("Uso: python gauss_jordan_inverse.py <dimension>")
+    sys.exit(1)
 
+try:
+    dimension = int(sys.argv[1])
+    if dimension <= 0:
+        raise ValueError
+except ValueError:
+    print("La dimensión debe ser un número entero positivo.")
+    sys.exit(1)
+
+# Construcción dinámica del nombre del archivo
+nombre_archivo = os.path.join("..", "..", "matrices", f"matriz_{dimension}x{dimension}_invertible.csv")
+
+# Carga y validación de la matriz
+try:
+    A = leer_matriz_desde_csv(nombre_archivo)
+except Exception as e:
+    print(f"Error leyendo la matriz desde {nombre_archivo}: {e}")
+    sys.exit(1)
+
+# Inversión y medición de tiempo
 inicio = time.time()
 inv_A = gauss_jordan_inverse(A)
 fin = time.time()
+
+# Mostrar o guardar resultado
+if dimension <= 10:
+    print("Inversa por Gauss-Jordan:")
+    print(np.round(inv_A, 6))
+else:
+    np.savetxt("inversa.csv", inv_A, delimiter=",", fmt="%.10f")
+    print("Inversa guardada en 'inversa.csv' (no se muestra por ser mayor de 10x10).")
+
 print(f"Tiempo de ejecución: {fin - inicio:.6f} segundos")
-# print("Inversa por Gauss-Jordan:")
-# print(inv_A)
