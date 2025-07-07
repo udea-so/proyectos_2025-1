@@ -70,3 +70,10 @@ Para ejecutarlos, se escribe: `./{ejecutable} {N}` siendo:
 
 - **ejectuable:** El nombre del ejecutable de cada algoritmo.
 - **N:** Las dimensiones de la matriz que se quiere invertir. 
+
+Por ejemplo:
+```bash
+./gaussiana 500
+```
+
+Representa cuando queremos usar el algoritmo de reducción gaussiana para inversión y queremos invertir la matriz 500x500
