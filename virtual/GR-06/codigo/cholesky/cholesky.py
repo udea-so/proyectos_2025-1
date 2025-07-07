@@ -2,6 +2,7 @@
 import numpy as np
 import time
 import sys
+import os
 
 """En la siguente funcion se hace la carga del archivo CSV que contiene matriz de diferentes tamaños **NxN**"""
 
@@ -36,6 +37,7 @@ A = LL^T
 $$
 
 *  A es una matriz simétrica y definida positiva de tamaño N×N.
+
 *  L es una matriz triangular inferior N×N cuyos elementos se calculan de manera recursiva.
 
 Formulas utilizadas para el calculo de la matriz **L**
@@ -51,18 +53,24 @@ $$
 
 def descomposicion_cholesky(A):
     N = A.shape[0]
+    #Se inicializa la matriz L
     L = np.zeros_like(A)
+    #Recorre filas i y columnas j
     for i in range(N):
         for j in range(i+1):
             suma = 0.0
+            #Elementos de la diagonal con la sumatoria de su formula para el calculo de L
             if j == i:
                 for k in range(j):
                     suma += L[j,k] ** 2
+                #Utilizamos val para avanzar en la formula y el calculo de si es positiva la matriz si no arrojamos error
                 val = A[j,j] - suma
                 if val <= 0:
                     raise ValueError(f"La matriz no es definida positiva en la posición ({j},{j})")
+                #Se saca la raiz para completar la formula de la diagonal
                 L[j,j] = np.sqrt(val)
             else:
+                #Formula para los elementos fuera de la diagonal
                 for k in range(j):
                     suma += L[i,k] * L[j,k]
                 L[i,j] = (A[i,j] - suma) / L[j,j]
@@ -70,13 +78,13 @@ def descomposicion_cholesky(A):
     print(L)
     return L
 
-"""**Funcion Sustitución de Forward**
-Resuelve Ly = e para una matriz triangular inferior
-"""
+"""**Funcion Sustitución de Forward**"""
 
 def forward_substitution(L, e):
     N = L.shape[0]
+    #Inici el vector para guardar los resultados
     y = np.zeros(N)
+    #Se aplica la formula
     for j in range(N):
         suma = 0.0
         for k in range(j):
@@ -84,13 +92,13 @@ def forward_substitution(L, e):
         y[j] = (e[j] - suma) / L[j, j]
     return y
 
-"""**Funcion Sustitución de Backward**
-Resuelve Lᵗx = y para una matriz triangular superior
-"""
+"""**Funcion Sustitución de Backward**"""
 
 def backward_substitution(L, y):
     N = L.shape[0]
+    #Inicializamos el vector para guardar los resultados
     x = np.zeros(N)
+    #Aplicamos la formula
     for j in reversed(range(N)):
         suma = 0.0
         for k in range(j+1, N):
@@ -98,16 +106,17 @@ def backward_substitution(L, y):
         x[j] = (y[j] - suma) / L[j, j]
     return x
 
-"""**Funcion para calcular la inversa**
-Usa la descomposición de Cholesky para obtener A⁻¹
-"""
+"""**Funcion para calcular la inversa**"""
 
 def calcular_inversa(L):
     N = L.shape[0]
+    # Inicializamos la matriz para guardar los resultados
     matriz_inv = np.zeros((N, N))
     for i in range(N):
         e = np.zeros(N)
         e[i] = 1
+        # Aplicamos forward y backward substitution para obtener el vector x
+        # y lo asignamos a la matriz inversa en la columna i-ésima
         y = forward_substitution(L, e)
         x = backward_substitution(L, y)
         matriz_inv[:, i] = x
@@ -117,7 +126,7 @@ def calcular_inversa(L):
 
 def main():
     if len(sys.argv) != 2:
-        print("Uso: python3 archivo_cholesky.py <dimension>")
+        print("Uso: python3 cholesky_secuencial.py <dimension>")
         sys.exit(1)
 
     try:
@@ -128,15 +137,27 @@ def main():
         print("La dimensión debe ser un número entero positivo.")
         sys.exit(1)
 
-    ruta_csv = f"../../matrices/matriz_{N}x{N}_dpi.csv"
+    # Ruta con nombre dinámico según dimensión
+    ruta_csv = f'../../matrices/def_pos_inv/matriz_{N}x{N}_dpi.csv'
 
+    if not os.path.isfile(ruta_csv):
+        print(f"Archivo no encontrado: {ruta_csv}")
+        sys.exit(1)
+
+    # 1. Cargar matriz
     A, N = cargar_matriz_csv(ruta_csv)
+
+    # 2. Inicializar matriz inversa
     _ = inicializar_matriz_inversa(N)
+
+    # 3. Calcular descomposición de Cholesky
     L = descomposicion_cholesky(A)
-    _ = calcular_inversa(L)
+
+    # 4. Calcular inversa
+    matriz_inv = calcular_inversa(L)
 
 if __name__ == "__main__":
-    inicio = time.time()
+    inicio = time.time()    # ⏱️ Marca de tiempo inicial
     main()
-    fin = time.time()
+    fin = time.time()       # ⏱️ Marca de tiempo final
     print(f"\nTiempo de ejecución total: {fin - inicio:.4f} segundos")
