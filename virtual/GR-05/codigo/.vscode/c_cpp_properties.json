@@ -1,0 +1,25 @@
+{
+  "configurations": [
+    {
+      "name": "Linux Kernel Module",
+      "includePath": [
+        "/usr/include",
+        "/usr/local/include",
+        "/lib/modules/6.11.0-26-generic/build/include",
+        "/lib/modules/6.11.0-26-generic/build/include/uapi",
+        "/lib/modules/6.11.0-26-generic/build/arch/x86/include",
+        "/lib/modules/6.11.0-26-generic/build/arch/x86/include/uapi",
+        "/lib/modules/6.11.0-26-generic/build/arch/x86/include/generated"
+      ],
+      "defines": [
+        "__KERNEL__",
+        "MODULE"
+      ],
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "linux-gcc-x64"
+    }
+  ],
+  "version": 4
+}
