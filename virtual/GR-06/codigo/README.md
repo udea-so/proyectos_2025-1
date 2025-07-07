@@ -59,4 +59,9 @@ Cambiando 100 por la dimensión de la matriz que se quiere invertir
 ### C
 Para los algoritmos en C, necesitamos compilar cada uno de diferente manera dependiendo las necesidades de cada archivo.
 
-- [lu_matrix_inversion.c](lu/lu_matrix_inversion.c): ``
+- [lu_matrix_inversion.c](lu/lu_matrix_inversion.c): `gcc -O2 -o lu lu_matrix_inversion.c`
+- [parallel_lu_matrix_inversion.c](lu/parallel_lu_matrix_inversion.c): `gcc -O2 -o parallel_lu parallel_lu_matrix_inversion.c -lpthread`
+- [gaussiana.c](gaussiana/gaussiana.c): `gcc -O2 -o gaussiana gaussiana.c -lm`
+- [parallel_gaussiana](gaussiana/parallel_gaussiana.c): `gcc -O2 -o parallel_gaussiana parallel_gaussiana.c -lpthread -lm`
+- [cholesky.c](cholesky/cholesky.c): `gcc -O2 -o cholesky cholesky.c -lm`
+- [cholesky_paralelo.c](cholesky/cholesky_paralelo.c): `gcc -O2 -fopenmp -o cholesky_paralelo cholesky_paralelo.c -lm`
