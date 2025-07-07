@@ -21,7 +21,7 @@
 │   └── parallel_lu_matrix_inversion.ipynb
 ├── matrix_inversión_cuda.ipynb
 └── README.md
-
+```
 
 
 Como se puede observar en el árbol de carpetas del repositorio el código principal está dividido en las carpetas de los algoritmos realizados. Por ejemplo, en la carpeta `lu` se encuentran alojados 4 archivos. La inversión de matrices de manera secuencial con el lenguaje C, la inversión de matrices de manera secuencial con el lenguaje Python, y otros 2 archivos con la implementación paralelizada del algoritmo. 
