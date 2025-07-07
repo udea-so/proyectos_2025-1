@@ -4,37 +4,7 @@
 #include <time.h>
 #include <math.h>
 
-#define MAX_LINE_LEN 250000 // Búfer para leer una línea del CSV (ajustar si las filas son muy largas)
-
-/**
- * @brief Determina la dimensión N de una matriz NxN desde un archivo CSV.
- * Cuenta el número de valores en la primera línea.
- * @param filename Nombre del archivo CSV.
- * @return La dimensión N de la matriz, o -1 si hay un error.
- */
-int get_matrix_size(const char* filename) {
-    FILE* file = fopen(filename, "r");
-    if (!file) {
-        perror("Error al abrir el archivo");
-        return -1;
-    }
-
-    char line[MAX_LINE_LEN];
-    if (fgets(line, sizeof(line), file) == NULL) {
-        fclose(file);
-        return 0; // Archivo vacío
-    }
-    fclose(file);
-
-    int count = 0;
-    char* token = strtok(line, ",");
-    while (token) {
-        count++;
-        token = strtok(NULL, ",");
-    }
-    return count;
-}
-
+#define MAX_LINE_LEN 250000
 
 /**
  * @brief Lee una matriz desde un archivo CSV a la mitad izquierda de una matriz ya alocada.
@@ -110,16 +80,25 @@ int gauss_jordan_inverse(double** AI, int n) {
     return 0; // Éxito
 }
 
-int main() {
-    // Ajusta la ruta al archivo CSV según sea necesario
-    const char* filename = "../../matrices/matriz_5000x5000_invertible.csv";
-
-    printf("Determinando el tamaño de la matriz desde %s...\n", filename);
-    int n = get_matrix_size(filename);
-    if (n <= 0) {
-        fprintf(stderr, "No se pudo determinar un tamaño de matriz válido.\n");
+int main(int argc, char* argv[]) {
+    // Verificar argumentos
+    if (argc != 2) {
+        fprintf(stderr, "Uso: %s <dimensión>\n", argv[0]);
         return 1;
     }
+
+    // Obtener dimensión desde argumentos
+    int n = atoi(argv[1]);
+    if (n <= 0) {
+        fprintf(stderr, "La dimensión debe ser un número entero positivo.\n");
+        return 1;
+    }
+
+    // Construir ruta del archivo CSV a partir de la dimensión
+    char filename[256];
+    snprintf(filename, sizeof(filename), "../../matrices/matriz_%dx%d_invertible.csv", n, n);
+
+    printf("Usando archivo: %s\n", filename);
     printf("Matriz detectada de tamaño %d x %d.\n", n, n);
 
     // --- Asignación de Memoria ---
