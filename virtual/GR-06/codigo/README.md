@@ -65,3 +65,8 @@ Para los algoritmos en C, necesitamos compilar cada uno de diferente manera depe
 - [parallel_gaussiana](gaussiana/parallel_gaussiana.c): `gcc -O2 -o parallel_gaussiana parallel_gaussiana.c -lpthread -lm`
 - [cholesky.c](cholesky/cholesky.c): `gcc -O2 -o cholesky cholesky.c -lm`
 - [cholesky_paralelo.c](cholesky/cholesky_paralelo.c): `gcc -O2 -fopenmp -o cholesky_paralelo cholesky_paralelo.c -lm`
+
+Para ejecutarlos, se escribe: `./{ejecutable} {N}` siendo:
+
+- **ejectuable:** El nombre del ejecutable de cada algoritmo.
+- **N:** Las dimensiones de la matriz que se quiere invertir. 
