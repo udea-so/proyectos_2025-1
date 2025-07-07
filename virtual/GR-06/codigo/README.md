@@ -38,7 +38,18 @@ Las matrices a usar se encuentran todas en este repositorio también en la carpe
 Se pueden cargar estas matrices en formato `.csv` o generar nuevas matrices de diferentes tamaños para probar la eficiencia de los algoritmos. 
 
 ### Python
-Para los algoritmos de Python (todos implementados en notebook de Google Colab) solo se requiere ejecutar el notebook con las matrices cargadas en el espacio de trabajo en la carpeta raíz del entorno de trabajo. 
+Para los algoritmos de Python (todos implementados en un archivo .py) se debe tener Python3 instalado y si no se tiene instalado numpy es recomendable crear un entorno virtual en la carpeta code con los siguientes comandos:
 
-![Carga de matrices en Python](../img/carga_matrices_python.png)
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install numpy
+```
+
+Luego, para ejecutar por ejemplo el algoritmo lu paralelo en python se navega hasta la carpeta `lu` y se ejecuta el siguiente comando:
+```bash
+python3 parallel_lu_matrix_inversion.py 100
+```
+
+Cambiando 100 por la dimensión de la matriz que se quiere invertir
 
