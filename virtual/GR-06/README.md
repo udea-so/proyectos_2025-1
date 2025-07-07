@@ -1,16 +1,13 @@
-# Titulo del proyecto
+# Inversión de matrices de gran tamaño
 
-> **Importante** 
-> * El formato del README es libre.
-> * Lo importante es que sea claro y que quien lo lea pueda replicar los pasos en su maquina.
 
 ## Lista de chequeo
 
 ### Documentos
 
 Dentro del directorio [documentos](documentos/) agregar los pdf de:
-- [ ] Propuesta.
-- [ ] Diapositivas de la presentacion de la propuesta
+- [x] Propuesta.
+- [x] Diapositivas de la presentacion de la propuesta
 - [ ] Reporte tecnico.
 - [ ] Dispositivas de la presentacion final.
 
