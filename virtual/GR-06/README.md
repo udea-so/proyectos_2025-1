@@ -12,7 +12,7 @@ Dentro del directorio [documentos](documentos/) agregar los pdf de:
 - [ ] Dispositivas de la presentacion final.
 
 
-### Archivos y elementos del respositorio
+### Archivos y elementos del repositorio
 
 - [ ] El repositorio del código implementado con su documentación. 
 - [ ] Código que incluya todos los recursos relevantes para ejecutar la aplicación desarrollada para resolver el desafío. 
