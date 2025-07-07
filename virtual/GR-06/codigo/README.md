@@ -28,12 +28,17 @@ Como se puede observar en el árbol de carpetas del repositorio el código princ
 Aparte de esto, se encuentra también un notebook de Google Colab llamado `matrix_inversión_cuda.ipynb` en el cual se encuentra la implementación de los 3 algoritmos usando CUDA. 
 
 ## Compilación y ejecución
+
+### Python
 Para los algoritmos de Python (todos implementados en notebook de Google Colab) solo se requiere ejecutar el notebook con las matrices cargadas en el espacio de trabajo en la carpeta raíz del entorno de trabajo. 
+
+![Carga de matrices en Python](../img/carga_matrices_python.png)
 
 Las matrices a usar se encuentran todas en este repositorio también en la carpeta proyectos_2025-1/virtual/GR-06/matrices
 
-Se pueden cargar estas matrices en formato `.csv` o generar nuevas matrices de diferentes tamaños (Deben ser cuadradas) para probar la eficiencia de los algoritmos. 
+Se pueden cargar estas matrices en formato `.csv` o generar nuevas matrices de diferentes tamaños para probar la eficiencia de los algoritmos. 
 
 **Restricciones para la generación de matrices:**
 - Para los algoritmos `lu` y `gaussiana` las matrices que se deben usar deben cumplir con ser cuadradas e invertibles.
-- Para el algoritmo `cholesky` se deben tener en cuenta las recomendaciones anteriores y adicionalmente, deben ser definidas positivas. (estas matrices también están cargadas en el repositorio en la carpeta     proyectos_2025-1/virtual/GR-06/matrices/def_pos_inv)
+- Para el algoritmo `cholesky` se deben tener en cuenta las recomendaciones anteriores y adicionalmente, deben ser definidas positivas. (estas matrices también están cargadas en el repositorio en la carpeta proyectos_2025-1/virtual/GR-06/matrices/def_pos_inv)
+
