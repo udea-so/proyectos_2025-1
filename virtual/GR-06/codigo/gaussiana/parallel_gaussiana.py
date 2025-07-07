@@ -2,6 +2,7 @@ import numpy as np
 import csv
 from numba import njit, prange
 import time
+import sys
 
 
 @njit(parallel=True)
@@ -37,15 +38,33 @@ def leer_matriz_desde_csv(nombre_archivo):
     return np.array(matriz)
 
 
-# Uso del programa
-nombre_archivo = '../../matrices/matriz_5000x5000_invertible.csv'
+# ------------------- Lógica principal -------------------
+
+if len(sys.argv) != 2:
+    print("Uso: python3 este_archivo.py <dimension>")
+    sys.exit(1)
+
+try:
+    n = int(sys.argv[1])
+    if n <= 0:
+        raise ValueError
+except ValueError:
+    print("La dimensión debe ser un número entero positivo.")
+    sys.exit(1)
+
+nombre_archivo = f"../../matrices/matriz_{n}x{n}_invertible.csv"
+
 A = leer_matriz_desde_csv(nombre_archivo)
-# print("Matriz original:")
-# print(A)
 
 inicio = time.time()
 inv_A = gauss_jordan_inverse_numba(A)
 fin = time.time()
 print(f"Tiempo de ejecución: {fin - inicio:.6f} segundos")
-# print("Inversa por Gauss-Jordan:")
-# print(inv_A)
+
+# Si la matriz es pequeña, imprimimos la inversa
+if n <= 10:
+    print("Inversa por Gauss-Jordan:")
+    print(np.round(inv_A, 6))
+else:
+    np.savetxt("inversa.csv", inv_A, delimiter=",", fmt="%.10f")
+    print("Matriz inversa guardada en 'inversa.csv' (no se muestra por ser mayor de 10x10).")
