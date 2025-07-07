@@ -50,6 +50,6 @@ También, se exploran 3 algoritmos de inversión de matrices secuenciales a los 
 |--------------------------|--------------|------------|-------------------|------------------|
 | Eliminación Gaussiana    |  `177.146s ± 0.765s`   | `184.465s ± 0.786s`  |   `97.374s ± 4.149s`       |   `63.662s ± 1.347s`      |
 | Descomposición LU        |  `0.536s ± 0.006s`   | `0.195s ± 0.003s`  |   `33.91s ± 0.08s`       |   `36.21s ± 1.26s`      |
-| Descomposición Cholesky  |  `0.110 s`   | `0.063 s`  |   `0.301 s`       |   `0.310 s`      |
+| Descomposición Cholesky  |  `62.062s ± 0.627`   | `0.107s ± 0.786s`  |   `62.062s ± 0.627s`       |   `62.141s ± 0.293s`      |
 
 > **Nota:** Los tiempos son promedios obtenidos al invertir matrices de tamaño `500x500`. Las implementaciones paralelas en Python utilizan `multiprocessing`, pero no siempre mejoran el rendimiento por el efecto del **GIL** y el overhead de crear procesos.
