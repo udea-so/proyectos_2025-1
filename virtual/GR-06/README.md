@@ -37,6 +37,6 @@ También, se exploran 3 algoritmos de inversión de matrices secuenciales a los 
 1. Clonar el repositorio con `git clone https://github.com/brandugar/proyectos_2025-1.git`
 2. Navegar hasta la carpeta `GR-06`
 3. Dependiendo del algoritmo a usar, leer el [archivo README](codigo/README.md) de la carpeta código. 
-4. En la carpeta [resultados](/codigo/resultados/) se pueden observar 3 notebooks de Google Colab con la recolección de tiempos que se realizó tomando en cuenta cada uno de los 12 algoritmos implementados. Aquí ya hay información acerca de cuales algoritmos son los que mostraron mejor rendimiento.
+4. En la carpeta [resultados](virtual/GR-06/codigo/resultados/) se pueden observar 3 notebooks de Google Colab con la recolección de tiempos que se realizó tomando en cuenta cada uno de los 12 algoritmos implementados. Aquí ya hay información acerca de cuales algoritmos son los que mostraron mejor rendimiento.
 
 ## Resultados encontrados
