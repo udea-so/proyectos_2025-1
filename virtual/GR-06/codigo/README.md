@@ -53,3 +53,5 @@ python3 parallel_lu_matrix_inversion.py 100
 
 Cambiando 100 por la dimensión de la matriz que se quiere invertir
 
+> [!TIP]
+> Para todos los algoritmos implementados en Python se hace el mismo proceso. Se navega hasta la carpeta del algoritmo y se ejecuta el archivo `.py` pasándole las dimensiones de la matriz. 
