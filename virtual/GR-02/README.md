@@ -1,4 +1,4 @@
-# Titulo del proyecto
+# Desarrollo de un Monitor de Sistema en Tiempo Real con Notificaciones de Umbrales de Recursos
 
 > **Importante** 
 > * El formato del README es libre.
