@@ -48,8 +48,8 @@ También, se exploran 3 algoritmos de inversión de matrices secuenciales a los 
 
 | Algoritmo                | C Secuencial | C Paralelo | Python Secuencial | Python Paralelo |
 |--------------------------|--------------|------------|-------------------|------------------|
-| Eliminación Gaussiana    |  `0.152 s`   | `0.089 s`  |   `0.398 s`       |   `0.412 s`      |
-| Descomposición LU        |  `0.536s ± 0.006s`   | `0.195s ± 0.003`  |   `33.91s ± 0.08s`       |   `36.21s ± 1.26s`      |
+| Eliminación Gaussiana    |  `177.146s ± 0.765s`   | `184.465s ± 0.786s`  |   `97.374s ± 4.149s`       |   `63.662s ± 1.347s`      |
+| Descomposición LU        |  `0.536s ± 0.006s`   | `0.195s ± 0.003s`  |   `33.91s ± 0.08s`       |   `36.21s ± 1.26s`      |
 | Descomposición Cholesky  |  `0.110 s`   | `0.063 s`  |   `0.301 s`       |   `0.310 s`      |
 
 > **Nota:** Los tiempos son promedios obtenidos al invertir matrices de tamaño `500x500`. Las implementaciones paralelas en Python utilizan `multiprocessing`, pero no siempre mejoran el rendimiento por el efecto del **GIL** y el overhead de crear procesos.
