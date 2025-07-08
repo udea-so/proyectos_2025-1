@@ -14,12 +14,12 @@ Dentro del directorio [documentos](documentos/) agregar los pdf de:
 
 ### Archivos y elementos del repositorio
 
-- [ ] El repositorio del código implementado con su documentación. 
-- [ ] Código que incluya todos los recursos relevantes para ejecutar la aplicación desarrollada para resolver el desafío. 
-- [ ] Explicación de los requisitos del sistema
-- [ ] Librerias y dependencias necesarias (pasos necesarios para llevar a cabo la instalación)
-- [ ] Pasos necesarioas para ejecutar la aplicación.
-- [ ] Ademas del código, es deseable que tenga un Notebook de Jupyter como complemento para la parte estadistica.
+- [x] El repositorio del código implementado con su documentación. 
+- [x] Código que incluya todos los recursos relevantes para ejecutar la aplicación desarrollada para resolver el desafío. 
+- [x] Explicación de los requisitos del sistema
+- [x] Librerias y dependencias necesarias (pasos necesarios para llevar a cabo la instalación)
+- [x] Pasos necesarioas para ejecutar la aplicación.
+- [x] Ademas del código, es deseable que tenga un Notebook de Jupyter como complemento para la parte estadistica.
 
 
 Este proyecto se basa en la aplicación de diferentes algoritmos y tecnologías centrados en la inversión de matrices de gran tamaño con el objetivo de medir tiempos, recolectarlos y realizar un análisis que permita identificar qué algoritmo, lenguaje o tecnología permite la inversión más eficiente temporalmente. 
@@ -46,10 +46,18 @@ También, se exploran 3 algoritmos de inversión de matrices secuenciales a los 
 
 ### Comparación de tiempos de inversión de matrices 500x500
 
-| Algoritmo                | C Secuencial | C Paralelo | Python Secuencial | Python Paralelo |
+| Algoritmo                | C Secuencial | C Paralelo | Python Secuencial | Python Paralelo | 
 |--------------------------|--------------|------------|-------------------|------------------|
-| Eliminación Gaussiana    |  `177.146s ± 0.765s`   | `184.465s ± 0.786s`  |   `97.374s ± 4.149s`       |   `63.662s ± 1.347s`      |
+| Eliminación Gaussiana    |  `0.098 ± 0.023s`   | `0.290s ± 0.029s`  |   `0.833s ± 0.027s`       |   `7.005s ± 0.125s`      |
 | Descomposición LU        |  `0.536s ± 0.006s`   | `0.195s ± 0.003s`  |   `33.91s ± 0.08s`       |   `36.21s ± 1.26s`      |
 | Descomposición Cholesky  |  `62.062s ± 0.627`   | `0.107s ± 0.786s`  |   `62.062s ± 0.627s`       |   `62.141s ± 0.293s`      |
+
+### Comparación de tiempos CUDA (Matrices n=500)
+
+| Algoritmo | Cupy | Pytorch |
+|-----------|------|---------|
+|Eliminación Gaussiana |`12.840`| `10.613`|
+| Descomposición LU| `97.844` | `52.987` |
+|Descomposión Cholesky |`50.892` | ` 16.975 ` |
 
 > **Nota:** Los tiempos son promedios obtenidos al invertir matrices de tamaño `500x500`. Las implementaciones paralelas en Python utilizan `multiprocessing`, pero no siempre mejoran el rendimiento por el efecto del **GIL** y el overhead de crear procesos.
