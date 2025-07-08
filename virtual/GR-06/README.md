@@ -8,8 +8,8 @@
 Dentro del directorio [documentos](documentos/) agregar los pdf de:
 - [x] Propuesta.
 - [x] Diapositivas de la presentacion de la propuesta
-- [ ] Reporte tecnico.
-- [ ] Dispositivas de la presentacion final.
+- [x] Reporte tecnico.
+- [x] Dispositivas de la presentacion final.
 
 
 ### Archivos y elementos del repositorio
