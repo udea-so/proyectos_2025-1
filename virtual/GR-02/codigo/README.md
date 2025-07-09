@@ -10,7 +10,7 @@
 ## 🎯 Objetivo
 Desarrollar un monitor de sistema que supervise en tiempo real el consumo de recursos (CPU y memoria) de los procesos activos, notificando al administrador cuando se superen umbrales predefinidos, para facilitar la gestión eficiente del sistema.
 
-## 📌 Requisitos Minimos del Sistema 
+## 💻 Requisitos Minimos del Sistema 
 | Componente         | Requisito Mínimo                                                                 |
 |--------------------|----------------------------------------------------------------------------------|
 | Sistema Operativo  | Linux (Ubuntu/Debian, WSL2 en Windows, o cualquier distro con soporte para /proc) |
@@ -19,6 +19,22 @@ Desarrollar un monitor de sistema que supervise en tiempo real el consumo de rec
 | RAM                | 512 MB (suficiente para el monitor y procesos básicos)                           |
 | Almacenamiento     | 100 MB libres (para instalación de dependencias y logs)                          |
 | Terminal           | Terminal estándar (ej: Bash, Zsh) con soporte para ncurses                      |
+
+## 📌 Estructura del Proyecto
+```
+sistema_monitor/  
+├── src/  
+│   ├── main.c            # Punto de entrada  
+│   └── process_monitor.c # Lógica del monitor
+|   └── alerts.c          # Lógica para alertas
+├── include/  
+│   └── process_monitor.h # Cabeceras
+|   └── alerts.h  
+├── build/                # Archivos compilados  
+└── Makefile              # Automatización
+└── config.ini
+└── run_tests.sh
+```
 
 ## 🔍 Dependencias Críticas
 El proyecto requiere las siguientes librerías y herramientas (instalables en Linux/WSL):
