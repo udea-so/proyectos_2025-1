@@ -1,5 +1,11 @@
 # Módulo Kernel: Control de Matriz de LEDs con Sensor de Temperatura (Simulado con GPIO)
 
+---
+---
+### Video del proyecto en ejecución: [https://youtu.be/Y1quVVN6jZM](https://youtu.be/Y1quVVN6jZM)
+---
+---
+
 ## 📊 Resumen del Proyecto
 
 Este proyecto implementa un sistema de control embebido completamente en **espacio de kernel**, donde un **sensor de temperatura simulado (DHT22)** es leído mediante pines GPIO virtuales y una **matriz de LEDs 4x4** es controlada como salida también a través de GPIOs. Todo el comportamiento se gestiona mediante **módulos del kernel de Linux**, emulando un entorno de hardware sin necesidad de una Raspberry Pi física.
