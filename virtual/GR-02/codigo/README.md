@@ -25,3 +25,7 @@ El proyecto requiere las siguientes librerías y herramientas (instalables en Li
 ```bash
 sudo apt update && sudo apt install -y build-essential gcc make
 ```
+### 2. Librería ncurses (para la interfaz gráfica):
+```bash
+sudo apt install -y libncurses-dev
+```
