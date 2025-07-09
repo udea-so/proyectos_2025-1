@@ -3,6 +3,8 @@
 ---
 ### Video del proyecto en ejecución: [https://youtu.be/Y1quVVN6jZM](https://youtu.be/Y1quVVN6jZM)
 ---
+
+### Ver la documentación del código en [codigo](codigo)
 ---
 ## Lista de chequeo
 
