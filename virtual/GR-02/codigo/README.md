@@ -37,6 +37,11 @@ sudo apt install -y valgrind
 ```bash
 sudo apt install -y stress-ng
 ```
+### 4. Ejecucion:
+```bash
+make
+./build/monitor
+```
 ## ⚠️ Consideraciones Especiales
 - **Entorno WSL (Windows Subsystem for Linux):**:
   - Requiere WSL2 para acceso completo a `/proc` y rendimiento óptimo.
