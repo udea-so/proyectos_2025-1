@@ -17,3 +17,11 @@ Desarrollar un monitor de sistema que supervise en tiempo real el consumo de rec
 | RAM                | 512 MB (suficiente para el monitor y procesos básicos)                           |
 | Almacenamiento     | 100 MB libres (para instalación de dependencias y logs)                          |
 | Terminal           | Terminal estándar (ej: Bash, Zsh) con soporte para ncurses                      |
+
+## 🔍 Dependencias Críticas
+El proyecto requiere las siguientes librerías y herramientas (instalables en Linux/WSL):
+
+### 1. Compilador y herramientas básicas:
+```bash
+sudo apt update && sudo apt install -y build-essential gcc make
+```
