@@ -37,7 +37,7 @@ sudo apt install -y valgrind
 ```bash
 sudo apt install -y stress-ng
 ```
-### 4. Ejecucion:
+### 5. Ejecucion:
 ```bash
 make
 ./build/monitor
