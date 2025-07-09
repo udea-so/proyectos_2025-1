@@ -68,7 +68,7 @@ chmod +x run_tests.sh
 sudo ./run_tests.sh
 ```
 
-# Salida Esperada
+### 3. Salida Esperada
 ```bash
 [2025-07-09 10:00:00] PRUEBA COMPLETADA: SOBRECARGA CPU
 [2025-07-09 10:01:00] ALERTAS GENERADAS:
