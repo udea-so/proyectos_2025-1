@@ -21,23 +21,23 @@ Desarrollar un monitor de sistema que supervise en tiempo real el consumo de rec
 ## 🔍 Dependencias Críticas
 El proyecto requiere las siguientes librerías y herramientas (instalables en Linux/WSL):
 
-### 1. Compilador y herramientas básicas:
+#### 1. Compilador y herramientas básicas:
 ```bash
 sudo apt update && sudo apt install -y build-essential gcc make
 ```
-### 2. Librería ncurses (para la interfaz gráfica):
+#### 2. Librería ncurses (para la interfaz gráfica):
 ```bash
 sudo apt install -y libncurses-dev
 ```
-### 3. Valgrind (para depuración de memory leaks):
+#### 3. Valgrind (para depuración de memory leaks):
 ```bash
 sudo apt install -y valgrind
 ```
-### 4. stress-ng (para pruebas de carga):
+#### 4. stress-ng (para pruebas de carga):
 ```bash
 sudo apt install -y stress-ng
 ```
-### 5. Ejecucion:
+#### 5. Ejecucion:
 ```bash
 make
 ./build/monitor
@@ -58,17 +58,17 @@ En la estructura del codigo se encuentra un script Bash `run_test.sh` que permit
 - Estabilidad del sistema
 - Consumo de recursos
 
-#### Instrucciones de Uso
-### 1. Dar permisos de ejecución:
+### Instrucciones de Uso
+#### 1. Dar permisos de ejecución:
 ```bash
 chmod +x run_tests.sh
 ```
-### 2. Ejecutar (requiere root para syslog):
+#### 2. Ejecutar (requiere root para syslog):
 ```bash
 sudo ./run_tests.sh
 ```
 
-### 3. Salida Esperada
+#### 3. Salida Esperada
 ```bash
 [2025-07-09 10:00:00] PRUEBA COMPLETADA: SOBRECARGA CPU
 [2025-07-09 10:01:00] ALERTAS GENERADAS:
