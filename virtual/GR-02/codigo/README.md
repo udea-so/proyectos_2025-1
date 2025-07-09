@@ -41,3 +41,8 @@ sudo apt install -y stress-ng
 - **Entorno WSL (Windows Subsystem for Linux):**:
   - Requiere WSL2 para acceso completo a `/proc` y rendimiento óptimo.
   - Configuración recomendada en VS Code: Extensión Remote - WSL.
+- **Sistemas embebidos o antiguos:**:
+  - Si el kernel no expone `/proc/stat` o `/proc/meminfo`, el proyecto no funcionará.
+- **Permisos:**:
+  - El programa necesita permisos de lectura en `/proc` (ejecutarlo como usuario normal suele ser suficiente).   
+ 
