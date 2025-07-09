@@ -29,3 +29,15 @@ sudo apt update && sudo apt install -y build-essential gcc make
 ```bash
 sudo apt install -y libncurses-dev
 ```
+### 3. Valgrind (para depuración de memory leaks):
+```bash
+sudo apt install -y valgrind
+```
+### 4. stress-ng (para pruebas de carga):
+```bash
+sudo apt install -y stress-ng
+```
+## ⚠️ Consideraciones Especiales
+- **Entorno WSL (Windows Subsystem for Linux):**:
+  - Requiere WSL2 para acceso completo a `/proc` y rendimiento óptimo.
+  - Configuración recomendada en VS Code: Extensión Remote - WSL.
