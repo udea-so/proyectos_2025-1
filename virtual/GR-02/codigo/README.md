@@ -51,14 +51,14 @@ make
 - **Permisos:**:
   - El programa necesita permisos de lectura en `/proc` (ejecutarlo como usuario normal suele ser suficiente).   
 
-## 🌐 Script de Pruebas Automatizadas para el Monitor de Sistema
+# 🌐 Script de Pruebas Automatizadas para el Monitor de Sistema
 En la estructura del codigo se encuentra un script Bash `run_test.sh` que permite validar el funcionamiento del monitor bajo diferentes escenarios de carga (CPU, memoria, procesos) y verificar:
 - Correcta deteccion de umbrales.
 - Generación de alertas
 - Estabilidad del sistema
 - Consumo de recursos
 
-# Instrucciones de Uso
+#### Instrucciones de Uso
 ### 1. Dar permisos de ejecución:
 ```bash
 chmod +x run_tests.sh
