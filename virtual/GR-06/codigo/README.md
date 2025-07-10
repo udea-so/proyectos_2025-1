@@ -3,29 +3,40 @@
 ## Árbol de carpetas
 
 ```text
-├── cholesky
-│   ├── cholesky.c
-│   ├── cholesky_paralelo.c
-│   ├── cholesky_paralelo.py
-│   └── cholesky.py
-├── gaussiana
-│   ├── gaussiana.c
-│   ├── gaussiana.py
-│   ├── parallel_gaussiana.c
-│   └── parallel_gaussiana.py
-├── inversion_manual_impl.ipynb
-├── lu
-│   ├── lu_matrix_inversion.c
-│   ├── lu_matrix_inversion.ipynb
-│   ├── parallel_lu_matrix_inversion.c
-│   └── parallel_lu_matrix_inversion.ipynb
-├── matrix_inversión_cuda.ipynb
-└── README.md
+│   README.md
+│
+├───cholesky
+│       cholesky.c
+│       cholesky.py
+│       cholesky_paralelo.c
+│       cholesky_paralelo.py
+│
+├───cuda_implementaciones
+│       inversion_manual_impl.ipynb
+│       matrix_inversión_cuda.ipynb
+│
+├───gaussiana
+│       gaussiana.c
+│       gaussiana.py
+│       parallel_gaussiana.c
+│       parallel_gaussiana.py
+│
+├───lu
+│       lu_matrix_inversion.c
+│       lu_matrix_inversion.py
+│       parallel_lu_matrix_inversion.c
+│       parallel_lu_matrix_inversion.py
+│
+└───resultados
+        resultados_cholesky.ipynb
+        resultados_gaussiano.ipynb
+        resultados_lu.ipynb
 ```
 
 
 Como se puede observar en el árbol de carpetas del repositorio el código principal está dividido en las carpetas de los algoritmos realizados. Por ejemplo, en la carpeta `lu` se encuentran alojados 4 archivos. La inversión de matrices de manera secuencial con el lenguaje C, la inversión de matrices de manera secuencial con el lenguaje Python, y otros 2 archivos con la implementación paralelizada del algoritmo. 
-Aparte de esto, se encuentra también un notebook de Google Colab llamado `matrix_inversión_cuda.ipynb` en el cual se encuentra la implementación de los 3 algoritmos usando CUDA. 
+
+Tambien podemos ver una carpeta llama `cuda_implementaciones` la cual tiene dos archivos, uno de ellos con la implementación de los algoritmos de manera manual usando unidades de procesamiento grafico y la otra tiene con la inversión de matrices usando los paquetes de `linalg.inv` de Pytorch y Cupy
 
 ## Compilación y ejecución
 
@@ -65,3 +76,43 @@ Para los algoritmos en C, necesitamos compilar cada uno de diferente manera depe
 - [parallel_gaussiana](gaussiana/parallel_gaussiana.c): `gcc -O2 -o parallel_gaussiana parallel_gaussiana.c -lpthread -lm`
 - [cholesky.c](cholesky/cholesky.c): `gcc -O2 -o cholesky cholesky.c -lm`
 - [cholesky_paralelo.c](cholesky/cholesky_paralelo.c): `gcc -O2 -fopenmp -o cholesky_paralelo cholesky_paralelo.c -lm`
+
+Para ejecutarlos, se escribe: `./{ejecutable} {N}` siendo:
+
+- **ejectuable:** El nombre del ejecutable de cada algoritmo.
+- **N:** Las dimensiones de la matriz que se quiere invertir. 
+
+Por ejemplo:
+```bash
+./gaussiana 500
+```
+
+Representa cuando queremos usar el algoritmo de reducción gaussiana para inversión y queremos invertir la matriz 500x500
+
+### CUDA
+Para los notebooks con las implementaciones se recomienda trabajar en Google Colab [Carpeta Drive](https://drive.google.com/drive/folders/1YM4oo6Az1tYHnOZyW4jSi4aTgQAjvqPb?usp=drive_link) alli encontraran 2 archivos los cuales tienen acceso directo al Colab. 
+Una vez se tenga el documento abierto:
+
+Cambiar el entorno de ejecución a GPU
+Ve a la barra superior y haz clic en:
+"Entorno de ejecución" → "Cambiar tipo de entorno de ejecución"
+
+En la ventana emergente:
+
+Tipo de hardware acelerador: selecciona GPU
+
+(Deja los otros campos como están)
+
+Haz clic en "Guardar"
+
+Imagen de referencia:
+
+![alt text](image.png)
+
+
+Luego se pueden ejecutar todas las celdas disponibles, entre ellas puedes usar una particular que te permite confirmar si puedes trabajar con CUDA:
+```
+import torch
+torch.cuda.is_available()
+``` 
+Si todo esta en orden y se hizo de manera correcta, la ejecución de la celda retorna `True`  
