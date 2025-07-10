@@ -18,7 +18,7 @@ Dentro del directorio [documentos](documentos/) agregar los pdf de:
 - [x] Código que incluya todos los recursos relevantes para ejecutar la aplicación desarrollada para resolver el desafío. 
 - [x] Explicación de los requisitos del sistema
 - [x] Librerias y dependencias necesarias (pasos necesarios para llevar a cabo la instalación)
-- [x] Pasos necesarioas para ejecutar la aplicación.
+- [x] Pasos necesarios para ejecutar la aplicación.
 - [x] Ademas del código, es deseable que tenga un Notebook de Jupyter como complemento para la parte estadistica.
 
 
@@ -61,3 +61,7 @@ También, se exploran 3 algoritmos de inversión de matrices secuenciales a los 
 |Descomposión Cholesky |`50.892` | ` 16.975 ` |
 
 > **Nota:** Los tiempos son promedios obtenidos al invertir matrices de tamaño `500x500`. Las implementaciones paralelas en Python utilizan `multiprocessing`, pero no siempre mejoran el rendimiento por el efecto del **GIL** y el overhead de crear procesos.
+
+### Video a la ejecución del proyecto
+Enlace al video de Youtube:
+[Anexo Video](https://youtu.be/GP2SXB5RNGQ)
