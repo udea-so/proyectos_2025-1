@@ -104,17 +104,31 @@ int invertir_cholesky(double A[MAX_SIZE][MAX_SIZE], double A_inv[MAX_SIZE][MAX_S
 
 int main(int argc, char *argv[]) {
     if (argc != 2) {
-        fprintf(stderr, "Uso: %s <archivo_csv>\n", argv[0]);
+        fprintf(stderr, "Uso: %s <N>\n", argv[0]);
         return 1;
     }
 
+    int N = atoi(argv[1]);
+    if (N <= 0 || N > MAX_SIZE) {
+        fprintf(stderr, "Error: N debe ser un número entre 1 y %d.\n", MAX_SIZE);
+        return 1;
+    }
+
+    char nombre_archivo[256];
+    snprintf(nombre_archivo, sizeof(nombre_archivo), "matriz_%dx%d_dpi.csv", N, N);
+
     char ruta_completa[1024];
-    snprintf(ruta_completa, sizeof(ruta_completa), "%s%s", RUTA_BASE, argv[1]);
+    snprintf(ruta_completa, sizeof(ruta_completa), "%s%s", RUTA_BASE, nombre_archivo);
 
     double A[MAX_SIZE][MAX_SIZE], A_inv[MAX_SIZE][MAX_SIZE];
     int n;
 
     if (!leer_csv(ruta_completa, A, &n)) {
+        return 1;
+    }
+
+    if (n != N) {
+        fprintf(stderr, "Advertencia: el archivo contiene una matriz de tamaño %d, no %d.\n", n, N);
         return 1;
     }
 
@@ -139,4 +153,3 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
-
