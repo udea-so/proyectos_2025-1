@@ -7,6 +7,13 @@
 |Juan Esteban Aristizabal Aristizabal|jesteban.aristizabal@udea.edu.co|Jesteban97|
 |Sharid Samantha Madrid Ospina|sharid.madrid@udea.edu.co|SamanthaMadrid19|
 
+## Video
+https://youtu.be/czDRhuk4LYw
+
+## Instaladores
+https://drive.google.com/drive/folders/14CrkRh-kaXsW-5RJXbu6AM-cJ3KBorgO?usp=sharing
+https://www.python.org/downloads/
+
 ## Descripción
 Este proyecto propone el diseño e implementación de una API de monitoreo de rendimiento orientada a aplicaciones en tiempo real. Esta construida con FastAPI que expone métricas de sistema (CPU, memoria, disco, red y procesos) utilizando `psutil` y `prometheus_client`, con sistema de alertas por correo electrónico cuando se superan ciertos umbrales.
 
