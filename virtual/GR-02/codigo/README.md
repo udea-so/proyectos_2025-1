@@ -94,4 +94,4 @@ sudo ./run_tests.sh
 [2025-07-09 10:00:47] VALGRIND: Sin fugas de memoria
 ```
 
-
+Link para ver video de ejecución: https://drive.google.com/drive/folders/1W4xpABlzpevXa1pERU968nx6R1xZwtY6?usp=sharing
