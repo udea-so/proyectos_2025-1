@@ -1,0 +1,43 @@
+{
+  "uid": "perf-api-dashboard",
+  "title": "Performance API Dashboard",
+  "timezone": "browser",
+  "editable": true,
+  "schemaVersion": 35,
+  "version": 1,
+  "panels": [
+    {
+      "type": "gauge",
+      "title": "CPU Usage %",
+      "targets": [
+        {
+          "expr": "cpu_usage_percent",
+          "format": "time_series"
+        }
+      ],
+      "gridPos": { "x": 0, "y": 0, "w": 6, "h": 6 }
+    },
+    {
+      "type": "gauge",
+      "title": "RAM Usage %",
+      "targets": [
+        {
+          "expr": "memory_usage_percent",
+          "format": "time_series"
+        }
+      ],
+      "gridPos": { "x": 6, "y": 0, "w": 6, "h": 6 }
+    },
+    {
+      "type": "gauge",
+      "title": "Disk Usage %",
+      "targets": [
+        {
+          "expr": "disk_usage_percent",
+          "format": "time_series"
+        }
+      ],
+      "gridPos": { "x": 0, "y": 6, "w": 6, "h": 6 }
+    }
+  ]
+}
