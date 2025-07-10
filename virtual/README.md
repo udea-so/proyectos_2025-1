@@ -27,4 +27,4 @@ En el siguiente repositorio se hara una recopilación de todos los proyectos fin
 |8|Performance API|José David Henao Gallego|[GR-08](GR-08/)|
 |||Juan Esteban Aristizabal||
 |||Sharid Samantha Madrid Ospina||
-|||Juan Esteban Aristizabal||
+|||Jonathan Mazo González||
