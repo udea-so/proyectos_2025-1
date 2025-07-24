@@ -10,7 +10,7 @@
 
 |#|Recurso|
 |---|---|
-|1|Documentos [link](documentos/)|
-|2|Repositorio [link](https://github.com/Neltrin22/practica4SO.git)|
-|3|Video explicativo [link](https://www.youtube.com/watch?v=deU5kuvz8r0)|
+|1|Documentos [[link]](documentos/)|
+|2|Repositorio [[link]](https://github.com/Neltrin22/practica4SO.git)|
+|3|Video explicativo [[link]](https://www.youtube.com/watch?v=deU5kuvz8r0)|
 
