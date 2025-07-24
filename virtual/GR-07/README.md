@@ -9,8 +9,8 @@
 ### Documentos
 
 Dentro del directorio [documentos](documentos/) agregar los pdf de:
-- [ ] Propuesta.
-- [ ] Diapositivas de la presentacion de la propuesta
+- [x] Propuesta.
+- [x] Diapositivas de la presentacion de la propuesta
 - [ ] Reporte tecnico.
 - [ ] Dispositivas de la presentacion final.
 
