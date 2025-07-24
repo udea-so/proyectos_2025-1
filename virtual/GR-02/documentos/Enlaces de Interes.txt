@@ -1,0 +1,7 @@
+                     Sistema Monitor de Recursos
+
+A continuación se presenta los enlaces donde se encuentra toda la documentación y
+proyecto de ejecución
+
+Link GitHub:    https://github.com/DuvanR0598/proyectos_2025-1/tree/main/virtual/GR-02
+Link del video: https://drive.google.com/drive/folders/1W4xpABlzpevXa1pERU968nx6R1xZwtY6?usp=sharing
