@@ -1,4 +1,4 @@
-# Compresor de archivos  paralelo
+# Desarrollo de un Monitor de Sistema en Tiempo Real con Notificaciones de Umbrales de Recursos
 
 ## Integrantes
 
