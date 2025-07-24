@@ -1,0 +1,157 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <math.h>
+
+#define MAX_LINE_LEN 250000
+
+/**
+ * @brief Lee una matriz desde un archivo CSV a la mitad izquierda de una matriz ya alocada.
+ * @param filename Nombre del archivo.
+ * @param matrix Puntero a la matriz (debe tener 'n' filas y al menos 'n' columnas).
+ * @param n Dimensión de la matriz.
+ */
+void read_matrix_from_csv(const char* filename, double** matrix, int n) {
+    FILE* file = fopen(filename, "r");
+    if (!file) {
+        perror("Error al abrir el archivo para lectura");
+        exit(EXIT_FAILURE);
+    }
+
+    char line[MAX_LINE_LEN];
+    int row = 0;
+    while (fgets(line, sizeof(line), file) && row < n) {
+        char* token = strtok(line, ",");
+        int col = 0;
+        while (token && col < n) {
+            matrix[row][col] = atof(token); // atof convierte string a double
+            token = strtok(NULL, ",");
+            col++;
+        }
+        row++;
+    }
+    fclose(file);
+}
+
+/**
+ * @brief Aplica el método de Gauss-Jordan para invertir una matriz.
+ * Opera sobre una matriz aumentada [A|I] y la transforma en [I|A^-1].
+ * @param AI La matriz aumentada de tamaño n x 2n.
+ * @param n La dimensión de la matriz original A.
+ * @return 0 si tiene éxito, -1 si la matriz es singular.
+ */
+int gauss_jordan_inverse(double** AI, int n) {
+    for (int i = 0; i < n; i++) {
+        // 1. Pivoteo parcial: encontrar la fila con el máximo valor en la columna i
+        int max_row = i;
+        for (int k = i + 1; k < n; k++) {
+            if (fabs(AI[k][i]) > fabs(AI[max_row][i])) {
+                max_row = k;
+            }
+        }
+
+        // Intercambiar la fila actual con la fila del pivote máximo
+        double* temp = AI[i];
+        AI[i] = AI[max_row];
+        AI[max_row] = temp;
+
+        // Verificar si la matriz es singular
+        if (fabs(AI[i][i]) < 1e-10) {
+            return -1; // Matriz singular, no se puede invertir
+        }
+
+        // 2. Normalizar la fila pivote (dividir toda la fila por el elemento pivote)
+        double pivot = AI[i][i];
+        for (int j = i; j < 2 * n; j++) {
+            AI[i][j] /= pivot;
+        }
+
+        // 3. Eliminar los otros elementos en la columna pivote
+        for (int k = 0; k < n; k++) {
+            if (i != k) {
+                double factor = AI[k][i];
+                for (int j = i; j < 2 * n; j++) {
+                    AI[k][j] -= factor * AI[i][j];
+                }
+            }
+        }
+    }
+    return 0; // Éxito
+}
+
+int main(int argc, char* argv[]) {
+    // Verificar argumentos
+    if (argc != 2) {
+        fprintf(stderr, "Uso: %s <dimensión>\n", argv[0]);
+        return 1;
+    }
+
+    // Obtener dimensión desde argumentos
+    int n = atoi(argv[1]);
+    if (n <= 0) {
+        fprintf(stderr, "La dimensión debe ser un número entero positivo.\n");
+        return 1;
+    }
+
+    // Construir ruta del archivo CSV a partir de la dimensión
+    char filename[256];
+    snprintf(filename, sizeof(filename), "../../matrices/matriz_%dx%d_invertible.csv", n, n);
+
+    printf("Usando archivo: %s\n", filename);
+    printf("Matriz detectada de tamaño %d x %d.\n", n, n);
+
+    // --- Asignación de Memoria ---
+    printf("Asignando memoria para la matriz aumentada [%d x %d]...\n", n, 2 * n);
+    double** AI = (double**)malloc(n * sizeof(double*));
+    if (AI == NULL) {
+        perror("Fallo en malloc para las filas");
+        return 1;
+    }
+    for (int i = 0; i < n; i++) {
+        AI[i] = (double*)malloc(2 * n * sizeof(double));
+        if (AI[i] == NULL) {
+            perror("Fallo en malloc para las columnas");
+            // Liberar memoria ya asignada
+            for (int k = 0; k < i; k++) free(AI[k]);
+            free(AI);
+            return 1;
+        }
+    }
+
+    // --- Inicialización de la Matriz Aumentada [A|I] ---
+    printf("Leyendo matriz desde el archivo CSV...\n");
+    read_matrix_from_csv(filename, AI, n);
+
+    printf("Inicializando la matriz identidad...\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            AI[i][j + n] = (i == j) ? 1.0 : 0.0;
+        }
+    }
+
+    // --- Inversión y Medición de Tiempo ---
+    printf("Iniciando inversión por Gauss-Jordan...\n");
+    clock_t start = clock();
+    int result = gauss_jordan_inverse(AI, n);
+    clock_t end = clock();
+
+    if (result != 0) {
+        fprintf(stderr, "Error: La matriz es singular y no puede ser invertida.\n");
+    } else {
+        double time_spent = (double)(end - start) / CLOCKS_PER_SEC;
+        printf("---------------------------------------------------\n");
+        printf("Tiempo de ejecución: %f segundos\n", time_spent);
+        printf("---------------------------------------------------\n");
+    }
+    
+    // --- Liberación de Memoria ---
+    printf("Liberando memoria...\n");
+    for (int i = 0; i < n; i++) {
+        free(AI[i]);
+    }
+    free(AI);
+
+    printf("Programa finalizado.\n");
+    return 0;
+}
