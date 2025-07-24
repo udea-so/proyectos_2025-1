@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 5s  # Intervalo de consulta
+
+scrape_configs:
+  - job_name: 'performance_api'
+    static_configs:
+      - targets: ['localhost:8001']  # Puerto del exporter de Prometheus

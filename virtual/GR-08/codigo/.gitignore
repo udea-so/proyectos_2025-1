@@ -1,0 +1,5 @@
+# Ignorar todo dentro de la carpeta prometheus
+prometheus/*
+
+# ¡Pero no ignores este archivo!
+!prometheus/prometheus.yml
