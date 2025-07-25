@@ -1,14 +1,16 @@
-# Reconocimiento de palabras clave en TinyML
+# Análisis Comparativo de Seguridad en Sistemas Operativos
 
 ## Integrantes
 
-* Juan Pablo Gómez López
-* Danilo Antonio Tovar Arias
+* Ana María Vega Angarita
+* Maritza Tabarez Cárdenas
+* Juan Diego Calderon Bermeo
+* Juan David Vásquez Ospina
 
 ## Recursos adicionales
 
 |#|Recurso|
 |---|---|
 |1|Documentos [[link]](documentos/)|
-|2|Repositorio [[link]](https://github.com/DaniloTovar/SisOp_ProyectoFinal)|
-|3|Video explicativo [[link]](https://drive.google.com/file/d/16DNZEmfY6V4ugs_wavuZAFdcWYKEPv8W/view)|
+|2|Repositorio [[link]](https://github.com/MaritzaTC/operating_system_security)|
+|3|Pagina Web [[link]](https://operating-system-security.vercel.app/dashboard)|
