@@ -1,14 +1,16 @@
-# Reconocimiento de palabras clave en TinyML
+# Arquitectura de Microservicios para Telconova Supports Suite
 
 ## Integrantes
 
-* Juan Pablo Gómez López
-* Danilo Antonio Tovar Arias
+* Valentina Muñoz Rincón
+* Ricardo Contreras Garzón
+* Juan Felipe Escobar Rendón
+  
 
 ## Recursos adicionales
 
 |#|Recurso|
 |---|---|
 |1|Documentos [[link]](documentos/)|
-|2|Repositorio [[link]](https://github.com/DaniloTovar/SisOp_ProyectoFinal)|
-|3|Video explicativo [[link]](https://drive.google.com/file/d/16DNZEmfY6V4ugs_wavuZAFdcWYKEPv8W/view)|
+|2|Repositorios [[Servicio de Órdenes]](https://github.com/sren97/telconova-supportsuite-workorder-service) - [[Servicio de Autenticación]](https://github.com/RickContreras/telconova-supportsuite-auth-service) - [[Servicio de Seguimiento de Órdenes]](https://github.com/RickContreras/telconova-supportsuite-tracking-service)|
+|3|Video explicativo|

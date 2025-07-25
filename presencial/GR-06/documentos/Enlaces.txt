@@ -1,0 +1,5 @@
+Proyecto en Github: https://github.com/andres-calvo/sisops-proyecto-final
+
+Video en YouTube sobre como correrlo: https://youtu.be/W9rUtdv4xFI
+
+Enlace Video como funciona la arquitectura en vivo: https://youtu.be/3rANlB_ccv4
