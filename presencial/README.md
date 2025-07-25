@@ -8,4 +8,9 @@ En el siguiente repositorio se hara una recopilación de todos los proyectos fin
 |---|---|---|---|
 |1|Reconocimiento de palabras clave en TinyML|Juan Pablo Gómez López|[GR-01](GR-01/)|
 |||Danilo Antonio Tovar Arias||
-
+|2|Análisis de Rendimiento de Aplicaciones Web través de una API en Python|David Camilo García Echavarría|[GR-02](GR-02/)|
+|||Cristian David Tamayo Espinosa||
+|||Silvio José Otero Guzmán||
+|||Gaia Ramirez Hincapié||
+|3|Comparación de Rendimiento entre Ubuntu y Raspberry Pi OS en Aplicaciones IoT|Sofi a Vanegas Cordoba|[GR-03](GR-03/)|
+|||Samuel David Montoya||
